@@ -1,23 +1,35 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
-import { DatePicker } from 'antd';
+import './index.scss';
+
+
+import Header from './_components/Header';
+import Sidebar from './_components/Sidebar';
+import Footer from './_components/Footer';
 
 import Home from './Home';
 import Events from './Events';
 
 class Dashboard extends Component {
     render() {
-        const ChildRoutes = (
+        const childRoutes = (
             <Switch>
-                <Route path='/home' component={Home}/>
+                <Route exact path='/' component={Home}/>
                 <Route path='/events' component={Events}/>
             </Switch>
         );
 
         return (
-            <div>
-                <DatePicker />
-                {ChildRoutes}
+            <div className='dashboard'>
+                <Header/>
+                <Sidebar/>
+                <div>
+                    <div className='mainbar'>
+                        {childRoutes}
+                        <Footer/>
+                    </div>
+                </div>
+
             </div>
         );
     }

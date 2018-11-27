@@ -1,0 +1,8 @@
+.sidebar{
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  width: $sidebar-width;
+  height: calc(100% - #{$header-height});
+  background-color: #efefef;
+}

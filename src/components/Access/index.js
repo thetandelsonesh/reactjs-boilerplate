@@ -8,7 +8,7 @@ class Access extends Component {
 
     render() {
 
-        const ChildRoutes = (
+        const childRoutes = (
             <Switch>
                 <Route path='/login' component={Login}/>
                 <Route path='/register' component={Register}/>
@@ -17,7 +17,7 @@ class Access extends Component {
 
         return (
             <div>
-                <ChildRoutes/>
+                {childRoutes}
             </div>
         );
     }
